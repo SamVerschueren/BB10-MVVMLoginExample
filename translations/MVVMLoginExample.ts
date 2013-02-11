@@ -4,22 +4,22 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="8"/>
+        <location filename="../assets/main.qml" line="7"/>
         <source>MVVM Login Example</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="25"/>
+        <location filename="../assets/main.qml" line="26"/>
         <source>Username</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="34"/>
+        <location filename="../assets/main.qml" line="33"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="42"/>
+        <location filename="../assets/main.qml" line="38"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>

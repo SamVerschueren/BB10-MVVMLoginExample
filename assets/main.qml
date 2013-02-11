@@ -1,4 +1,5 @@
 import bb.cascades 1.0
+import QtQuick 1.0
 import mvvm.viewmodels 1.0
 
 Page {
@@ -23,10 +24,6 @@ Page {
             id: txtUsername
             text: loginVM.username
             hintText: qsTr("Username")
-            onTextChanged: {
-                // When the text is changed, update the viewmodel with the new username
-                loginVM.username = txtUsername.text
-            }
         }
 
         // Bind this TextField to the password property of the LoginViewModel.
@@ -35,20 +32,14 @@ Page {
             text: loginVM.password
             hintText: qsTr("Password")
             inputMode: TextFieldInputMode.Password
-            onTextChanged: {
-                // When the text is changed, update the viewmodel with the new password
-                loginVM.password = txtPassword.text
-            }
         }
 
         Button {
             text: qsTr("Login")
             horizontalAlignment: HorizontalAlignment.Center
             imageSource: "asset:///images/lock.png"
-            onClicked: {
-                // When the button is clicked, invoke the login method of the viewmodel.
-                loginVM.login();
-            }
+            // When the button is clicked, invoke the login method of the viewmodel.
+            onClicked: loginVM.login()
         }
     }
 
@@ -56,6 +47,18 @@ Page {
         // Instantiate the LoginViewModel and give it a unique id
         LoginViewModel {
             id: loginVM
+        },
+        // Bind the property username of the loginViewModel to the text of the txtUsername TextField.
+        Binding {
+            target: loginVM
+            value: txtUsername.text
+            property: "username"
+        },
+        // Bind the property password of the loginViewModel to the text of the txtPassword TextField.
+        Binding {
+            target: loginVM
+            value: txtPassword.text
+            property: "password"
         }
     ]
 }
